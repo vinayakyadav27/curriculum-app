@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        git(url: 'https://github.com/vinayakyadav27/chatbot.git', branch: 'master')
+        git(url: 'https://github.com/vinayakyadav27/chatbot.git', branch: 'main')
       }
     }
 
