@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        git(url: 'https://github.com/faraday-academy/curriculum-app', branch: 'master')
+        git(url: 'https://github.com/vinayakyadav27/chatbot.git', branch: 'master')
       }
     }
 
@@ -15,14 +15,14 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f curriculum-front/Dockerfile -t vinayakyadav4017/curriculum-front:latest .'
+        sh 'docker build -f albertsons-frontend/Dockerfile -t vinayakyadav4017/jenkins-front:latest .'
       }
     }
 
     stage('Log into Dockerhub') {
       environment {
-        DOCKERHUB_USER = 'fuze365'
-        DOCKERHUB_PASSWORD = 'gv1&3Ea9W##onDQAMUG&41CvZ7h1d1'
+        DOCKERHUB_USER = 'vinayakyadav4017'
+        DOCKERHUB_PASSWORD = 'Qwertyuiop@4017'
       }
       steps {
         sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD'
